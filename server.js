@@ -1,8 +1,8 @@
-var path = require('path');
-var express = require('express');
-var bodyParser = require('body-parser');
-var logger = require('morgan');
-var app = express();
+var path = require('path'),
+    express = require('express'),
+    bodyParser = require('body-parser'),
+    logger = require('morgan'),
+    app = express();
 
 app.set('port', process.env.PORT || 3001);
 app.use(logger('dev'));
