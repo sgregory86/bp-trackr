@@ -1,0 +1,13 @@
+{
+  "name": "bptrackr",
+  "version": "0.0.0",
+  "author": "Steven Gregory",
+  "private": true,
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.9.5",
+    "path": "^0.4.9"
+  }
+}
