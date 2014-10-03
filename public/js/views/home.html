@@ -4,9 +4,7 @@
     </div>
 </div>
 <div class="container">
-    <ul>
-        <li ng-repeat="reading in readings">
-            <span class="alert">{{reading.systolic}}/{{reading.diastolic}}</span>
-        </li>
-    </ul>
+    <div  ng-repeat="reading in readings | limitTo: readingLimit | reverse" class="alert alert-success" role="alert">
+        {{reading.systolic}}/{{reading.diastolic}}
+    </div>
 </div>
