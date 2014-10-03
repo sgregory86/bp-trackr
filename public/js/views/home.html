@@ -1,0 +1,12 @@
+<div class="jumbotron">
+    <div class="container">
+        <h1>Blood Pressure</h1>
+    </div>
+</div>
+<div class="container">
+    <ul>
+        <li ng-repeat="reading in readings">
+            <span class="alert">{{reading.systolic}}/{{reading.diastolic}}</span>
+        </li>
+    </ul>
+</div>
