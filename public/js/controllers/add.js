@@ -9,7 +9,8 @@ angular.module('MyApp')
           $alert({
             content: 'Blood pressure has been added.',
             animation: 'fadeZoomFadeDown',
-            type: 'material',
+            placement: 'top-right',
+            type: 'info',
             duration: 3
           });
         })
@@ -20,7 +21,7 @@ angular.module('MyApp')
           $alert({
             content: response.data.message,
             animation: 'fadeZoomFadeDown',
-            type: 'material',
+            type: 'info',
             duration: 3
           });
         });

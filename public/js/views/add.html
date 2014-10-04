@@ -2,10 +2,14 @@
   <div class="panel panel-default">
     <div class="panel-heading">Add Blood Pressure</div>
     <div class="panel-body">
-      <form class="form" method="post" ng-submit="addReading()" name="addForm">
+      <form class="form" method="post" ng-submit="addReading()" name="addForm" role="form">
+        <div class="form-group" ng-class="{ 'has-error' : addForm.date.$invalid && addForm.date.$dirty }">
+          <label class="control-label"><span class="glyphicon glyphicon-calendar"></span>Date</label>
+          <input class="form-control" type="text" name="date" ng-model="selectedDate" required bs-datepicker>
+        </div>
         <div class="form-group" ng-class="{ 'has-error' : addForm.systolic.$invalid && addForm.systolic.$dirty }">
           <label class="control-label">Systolic</label>
-          <input class="form-control" type="text" name="systolic" ng-model="systolic" required autofocus>
+          <input class="form-control" type="text" name="systolic" ng-model="systolic" required>
         </div>
         <div class="form-group" ng-class="{ 'has-error' : addForm.diastolic.$invalid && addForm.diastolic.$dirty }">
           <label class="control-label">Diastolic</label>
