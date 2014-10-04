@@ -1,5 +1,5 @@
-angular.module('MyApp').
-  filter('reverse', function() {
+angular.module('MyApp')
+  .filter('reverse', function() {
     return function(items) {
       return items.slice().reverse();
     };
