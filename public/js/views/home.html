@@ -5,6 +5,6 @@
 </div>
 <div class="container">
   <div ng-repeat="reading in readings | limitTo: readingLimit | reverse" ng-class="{'latest': $first}" class="alert alert-success" role="alert">
-    {{reading.systolic}}/{{reading.diastolic}}
+    {{reading.date}}  -- <strong>{{reading.systolic}}/{{reading.diastolic}}</strong>
   </div>
 </div>

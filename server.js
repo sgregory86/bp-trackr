@@ -2,9 +2,11 @@ var path = require('path'),
   express = require('express'),
   bodyParser = require('body-parser'),
   logger = require('morgan'),
-  mongoose = require('mongoose');
+  mongoose = require('mongoose'),
+  moment = require('moment');
 
 var bloodPressureSchema = new mongoose.Schema({
+  date: String,
   systolic: Number,
   diastolic: Number
 });
@@ -37,7 +39,10 @@ app.get('/api/readings/:id', function(req, res, next) {
 });
 
 app.post('/api/reading', function(req, res, next) {
+  var now = moment(new Date()),
+    date = now.format("M/DD/YY");
   var bloodPressureTest = new BloodPressure({
+    date: date,
     systolic: req.body.systolic,
     diastolic: req.body.diastolic
   });
