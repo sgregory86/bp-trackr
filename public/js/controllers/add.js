@@ -1,8 +1,9 @@
 angular.module('MyApp')
   .controller('AddCtrl', function($scope, $alert, BloodPressure) {
     $scope.addReading = function() {
-      BloodPressure.save({ systolic: $scope.systolic, diastolic: $scope.diastolic }).$promise
+      BloodPressure.save({ selectedDate: $scope.selectedDate, systolic: $scope.systolic, diastolic: $scope.diastolic }).$promise
         .then(function() {
+          $scope.selectedDate = '';
           $scope.systolic = '';
           $scope.diastolic = '';
           $scope.addForm.$setPristine();
@@ -15,6 +16,7 @@ angular.module('MyApp')
           });
         })
         .catch(function(response) {
+          $scope.selectedDate = '';
           $scope.systolic = '';
           $scope.diastolic = '';
           $scope.addForm.$setPristine();

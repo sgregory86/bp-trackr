@@ -39,10 +39,8 @@ app.get('/api/readings/:id', function(req, res, next) {
 });
 
 app.post('/api/readings', function(req, res, next) {
-  var now = moment(new Date()),
-    date = now.format("M/DD/YY");
   var bloodPressureTest = new BloodPressure({
-    date: date,
+    date: moment(req.body.selectedDate).format("M/DD/YY"),
     systolic: req.body.systolic,
     diastolic: req.body.diastolic
   });
