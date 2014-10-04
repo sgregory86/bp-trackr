@@ -6,6 +6,10 @@ angular.module('MyApp', ['ngResource', 'ngMessages', 'ngRoute', 'mgcrea.ngStrap'
         templateUrl: 'js/views/home.html',
         controller: 'MainCtrl'
       })
+      .when('/add', {
+        templateUrl: 'js/views/add.html',
+        controller: 'AddCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
