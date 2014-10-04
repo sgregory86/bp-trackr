@@ -38,7 +38,7 @@ app.get('/api/readings/:id', function(req, res, next) {
   });
 });
 
-app.post('/api/reading', function(req, res, next) {
+app.post('/api/readings', function(req, res, next) {
   var now = moment(new Date()),
     date = now.format("M/DD/YY");
   var bloodPressureTest = new BloodPressure({
