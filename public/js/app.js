@@ -1,9 +1,7 @@
-angular.module('MyApp', ['ngCookies', 'ngResource', 'ngMessages', 'ngRoute', 'mgcrea.ngStrap'])
-  .config(['$locationProvider', '$routeProvider',
-    function($locationProvider, $routeProvider) {
+angular.module('MyApp', ['ngResource', 'ngMessages', 'ngRoute', 'mgcrea.ngStrap'])
+  .config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
       $locationProvider.html5Mode(true);
-
-      $routeProvider
+      $routeProvider 
         .when('/', {
           templateUrl: 'js/views/home.html',
           controller: 'MainCtrl'
