@@ -2,8 +2,7 @@ var path = require('path'),
   express = require('express'),
   bodyParser = require('body-parser'),
   logger = require('morgan'),
-  mongoose = require('mongoose'),
-  moment = require('moment');
+  mongoose = require('mongoose');
 
 var bloodPressureSchema = new mongoose.Schema({
   date: String,
