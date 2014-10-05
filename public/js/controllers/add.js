@@ -2,10 +2,13 @@ angular.module('MyApp')
   .controller('AddCtrl', function($scope, $alert, BloodPressure) {
 
     $scope.date = moment(new Date()).format("M/DD/YY");
-    $scope.selectedDate ? $scope.selectedDate : $scope.date;
+
+    $scope.setDate = function() {
+      return $scope.selectedDate ? moment($scope.selectedDate).format("M/DD/YY") : $scope.date;
+    };
 
     $scope.addReading = function() {
-      BloodPressure.save({ selectedDate: moment($scope.selectedDate).format("M/DD/YY"), systolic: $scope.systolic, diastolic: $scope.diastolic }).$promise
+      BloodPressure.save({ selectedDate: $scope.setDate(), systolic: $scope.systolic, diastolic: $scope.diastolic }).$promise
         .then(function() {
           $scope.date = '';
           $scope.selectedDate = '';
