@@ -49,13 +49,21 @@ app.post('/api/readings', function(req, res, next) {
   });
 });
 
+app.delete('/api/readings/:id', function(req, res, next) {
+  BloodPressure.findByIdAndRemove(req.params.id, function(err, reading) {
+    if (err) return next(err);
+  });
+});
+
 app.get('*', function(req, res) {
   res.redirect('/#' + req.originalUrl);
 });
 
 app.use(function(err, req, res, next) {
   console.error(err.stack);
-  res.send(500, { message: err.message });
+  res.send(500, {
+    message: err.message
+  });
 });
 
 app.listen(app.get('port'), function() {
