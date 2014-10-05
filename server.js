@@ -52,6 +52,7 @@ app.post('/api/readings', function(req, res, next) {
 app.delete('/api/readings/:id', function(req, res, next) {
   BloodPressure.findByIdAndRemove(req.params.id, function(err, reading) {
     if (err) return next(err);
+    res.send(reading);
   });
 });
 
