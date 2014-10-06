@@ -1,6 +1,7 @@
 var gulp = require('gulp');
 var sass = require('gulp-sass');
 var csso = require('gulp-csso');
+var jshint = require('gulp-jshint');
 var plumber = require('gulp-plumber');
 
 gulp.task('sass', function() {
@@ -11,8 +12,18 @@ gulp.task('sass', function() {
     .pipe(gulp.dest('public/css'));
 });
 
-gulp.task('watch', function() {
-  gulp.watch('public/css/*.scss', ['sass']);
+gulp.task('jshint', function() {
+  gulp.src([
+    'public/js/**/*.js',
+    '!public/js/main.js'
+  ])
+    .pipe(jshint())
+    .pipe(jshint.reporter('jshint-stylish'));
 });
 
-gulp.task('default', ['sass', 'watch']);
+gulp.task('watch', function() {
+  gulp.watch('public/css/*.scss', ['sass']);
+  gulp.watch('public/js/**/*.js', ['jshint']);
+});
+
+gulp.task('default', ['sass', 'jshint', 'watch']);
