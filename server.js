@@ -4,7 +4,7 @@ var path = require('path'),
   logger = require('morgan'),
   mongoose = require('mongoose'),
   browserify = require('browserify'),
-  BloodPressure = require('./public/js/models/bloodPressure');
+  BloodPressure = require('./public/models/bloodPressure');
 
 mongoose.connect('mongodb://localhost:27017/bp');
 

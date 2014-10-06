@@ -14,8 +14,9 @@ gulp.task('sass', function() {
 
 gulp.task('jshint', function() {
   gulp.src([
-    'public/js/**/*.js',
-    '!public/js/main.js'
+    'public/**/*.js',
+    '!public/main.js',
+    '!public/bower_components/**'
   ])
     .pipe(jshint())
     .pipe(jshint.reporter('jshint-stylish'));
@@ -23,7 +24,7 @@ gulp.task('jshint', function() {
 
 gulp.task('watch', function() {
   gulp.watch('public/css/*.scss', ['sass']);
-  gulp.watch('public/js/**/*.js', ['jshint']);
+  gulp.watch('public/**/*.js', ['jshint']);
 });
 
 gulp.task('default', ['sass', 'jshint', 'watch']);

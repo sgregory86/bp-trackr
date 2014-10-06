@@ -3,11 +3,11 @@ angular.module('MyApp', ['ngResource', 'ngMessages', 'ngRoute', 'mgcrea.ngStrap'
     $locationProvider.html5Mode(true);
     $routeProvider 
       .when('/', {
-        templateUrl: 'js/views/home.html',
+        templateUrl: 'views/home.html',
         controller: 'MainCtrl'
       })
       .when('/add', {
-        templateUrl: 'js/views/add.html',
+        templateUrl: 'views/add.html',
         controller: 'AddCtrl'
       })
       .otherwise({
