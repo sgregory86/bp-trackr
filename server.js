@@ -2,15 +2,9 @@ var path = require('path'),
   express = require('express'),
   bodyParser = require('body-parser'),
   logger = require('morgan'),
-  mongoose = require('mongoose');
-
-var bloodPressureSchema = new mongoose.Schema({
-  date: String,
-  systolic: Number,
-  diastolic: Number
-});
-
-var BloodPressure = mongoose.model('BloodPressure', bloodPressureSchema);
+  mongoose = require('mongoose'),
+  browserify = require('browserify'),
+  BloodPressure = require('./public/js/models/bloodPressure');
 
 mongoose.connect('mongodb://localhost:27017/bp');
 
