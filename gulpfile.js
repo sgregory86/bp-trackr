@@ -1,30 +1,34 @@
-var gulp = require('gulp');
-var sass = require('gulp-sass');
-var csso = require('gulp-csso');
-var jshint = require('gulp-jshint');
-var plumber = require('gulp-plumber');
+var gulp = require('gulp'),
+  plug = require('gulp-load-plugins')();
 
 gulp.task('sass', function() {
-  gulp.src('public/css/master.scss')
-    .pipe(plumber())
-    .pipe(sass())
-    .pipe(csso())
+  return gulp.src('public/css/master.scss')
+    .pipe(plug.plumber())
+    .pipe(plug.sass())
+    .pipe(plug.csso())
     .pipe(gulp.dest('public/css'));
 });
 
+gulp.task('htmlhint', function() {
+  return gulp.src('public/index.html')
+    .pipe(plug.htmlhint())
+    .pipe(plug.htmlhint.reporter());
+});
+
 gulp.task('jshint', function() {
-  gulp.src([
-    'public/**/*.js',
-    '!public/main.js',
-    '!public/bower_components/**'
-  ])
-    .pipe(jshint())
-    .pipe(jshint.reporter('jshint-stylish'));
+  return gulp.src([
+      'public/**/*.js',
+      '!public/main.js',
+      '!public/bower_components/**'
+    ])
+    .pipe(plug.jshint())
+    .pipe(plug.jshint.reporter('jshint-stylish'));
 });
 
 gulp.task('watch', function() {
   gulp.watch('public/css/*.scss', ['sass']);
+  gulp.watch('public/index.html', ['htmlhint']);
   gulp.watch('public/**/*.js', ['jshint']);
 });
 
-gulp.task('default', ['sass', 'jshint', 'watch']);
+gulp.task('default', ['sass', 'htmlhint', 'jshint', 'watch']);
