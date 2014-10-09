@@ -34,6 +34,7 @@ app.get('/api/readings/:id', function(req, res, next) {
 app.post('/api/readings', function(req, res, next) {
   var bloodPressureTest = new BloodPressure({
     date: req.body.selectedDate,
+    time: req.body.selectedTime,
     systolic: req.body.systolic,
     diastolic: req.body.diastolic
   });
