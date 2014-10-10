@@ -18,6 +18,7 @@ angular.module('MyApp')
           $scope.date = '';
           $scope.time = '';
           $scope.selectedDate = '';
+          $scope.selectedTime = '';
           $scope.systolic = '';
           $scope.diastolic = '';
           $scope.addForm.$setPristine();
@@ -33,6 +34,7 @@ angular.module('MyApp')
           $scope.date = '';
           $scope.time = '';
           $scope.selectedDate = '';
+          $scope.selectedTime = '';
           $scope.systolic = '';
           $scope.diastolic = '';
           $scope.addForm.$setPristine();
