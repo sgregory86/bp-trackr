@@ -5,11 +5,10 @@
 </div>
 <div class="container">
   <div ng-repeat="reading in readings | limitTo: readingLimit | reverse" ng-class="{'latest': $first}" class="alert alert-success" role="alert">
-    <time>{{reading.date}} {{reading.time}}</time>
     <strong class="blood-pressure">
       <span class="systolic">{{reading.systolic}}</span>/<span class="diastolic">{{reading.diastolic}}</span>
-      <span ng-click="removeItem(reading)" class="glyphicon glyphicon-remove"></span>
     </strong>
+    <time>{{reading.date}} {{reading.time}}</time>
+    <span ng-click="removeItem(reading)" class="glyphicon glyphicon-remove delete"></span>
   </div>
-</div>
 </div>
