@@ -1,10 +1,14 @@
-var mongoose = require('mongoose');
+(function() {
+    'use strict';
 
-var bloodPressureSchema = new mongoose.Schema({
-    date: String,
-    time: String,
-    systolic: Number,
-    diastolic: Number
-});
+    var mongoose = require('mongoose');
 
-module.exports = mongoose.model('BloodPressure', bloodPressureSchema);
+    var bloodPressureSchema = new mongoose.Schema({
+        date: String,
+        time: String,
+        systolic: Number,
+        diastolic: Number
+    });
+
+    module.exports = mongoose.model('BloodPressure', bloodPressureSchema);
+})();
