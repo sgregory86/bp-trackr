@@ -35,7 +35,12 @@ gulp.task('compress', function() {
             'public/bower_components/angular-resource/angular-resource.js',
             'public/bower_components/angular-route/angular-route.js',
             'public/bower_components/moment/moment.js',
-            'public/bundle.js'
+            'public/bundle.js',
+            'public/app.js',
+            'public/services/*.js',
+            'public/controllers/main.js',
+            'public/controllers/add.js',
+            'public/filters/*.js'
         ])
         .pipe(plug.concat('app.min.js'))
         .pipe(gulp.dest('public'));

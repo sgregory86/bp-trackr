@@ -1,21 +1,18 @@
-(function () {
-    'use strict';
-
-    angular.module('MyApp', ['ngResource', 'ngMessages', 'ngRoute', 'mgcrea.ngStrap'])
-        .config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
+angular.module('MyApp', ['ngResource', 'ngMessages', 'ngRoute', 'mgcrea.ngStrap'])
+    .config(['$locationProvider', '$routeProvider',
+        function($locationProvider, $routeProvider) {
             $locationProvider.html5Mode(true);
-            $routeProvider 
+            $routeProvider
                 .when('/', {
-                templateUrl: 'views/home.html',
-                controller: 'MainCtrl'
-            })
+                    templateUrl: 'views/home.html',
+                    controller: 'MainCtrl'
+                })
                 .when('/add', {
-                templateUrl: 'views/add.html',
-                controller: 'AddCtrl'
-            })
-            .otherwise({
-                redirectTo: '/'
-            });
-          }
-      ]);
-})();
+                    templateUrl: 'views/add.html',
+                    controller: 'AddCtrl'
+                })
+                .otherwise({
+                    redirectTo: '/'
+                });
+        }
+    ]);
