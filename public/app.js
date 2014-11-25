@@ -10,6 +10,7 @@ angular.module('MyApp', ['ngResource', 'ngMessages', 'ngRoute', 'mgcrea.ngStrap'
                 })
                 .when('/add', {
                     templateUrl: 'views/add.html',
+                    controllerAs: 'vm',
                     controller: 'AddCtrl'
                 })
                 .otherwise({
