@@ -5,6 +5,7 @@ angular.module('MyApp', ['ngResource', 'ngMessages', 'ngRoute', 'mgcrea.ngStrap'
             $routeProvider
                 .when('/', {
                     templateUrl: 'views/home.html',
+                    controllerAs: 'vm',
                     controller: 'MainCtrl'
                 })
                 .when('/add', {
