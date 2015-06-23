@@ -1,6 +1,13 @@
-angular.module('MyApp')
-    .factory('BloodPressure', ['$resource',
-        function($resource) {
-            return $resource('/api/readings/:_id');
-        }
-    ]);
+(function() {
+    'use strict';
+
+    angular
+        .module('bpTracker')
+        .factory('BloodPressure', BloodPressure);
+
+    BloodPressure.$inject = ['$resource'];
+
+    function BloodPressure($resource) {
+        return $resource('/api/readings/:_id');
+    }
+})();

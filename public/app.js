@@ -1,20 +1,6 @@
-angular.module('MyApp', ['ngResource', 'ngMessages', 'ngRoute', 'mgcrea.ngStrap'])
-    .config(['$locationProvider', '$routeProvider',
-        function($locationProvider, $routeProvider) {
-            $locationProvider.html5Mode(true);
-            $routeProvider
-                .when('/', {
-                    templateUrl: 'views/home.html',
-                    controllerAs: 'vm',
-                    controller: 'MainCtrl'
-                })
-                .when('/add', {
-                    templateUrl: 'views/add.html',
-                    controllerAs: 'vm',
-                    controller: 'AddCtrl'
-                })
-                .otherwise({
-                    redirectTo: '/'
-                });
-        }
-    ]);
+angular.module('bpTracker', [
+    'ngResource',
+    'ngMessages',
+    'ngRoute',
+    'mgcrea.ngStrap'
+]);

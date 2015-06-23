@@ -37,6 +37,7 @@ gulp.task('compress', function() {
             'public/bower_components/moment/moment.js',
             'public/bundle.js',
             'public/app.js',
+            'public/app.route.js',
             'public/services/*.js',
             'public/controllers/main.js',
             'public/controllers/add.js',
