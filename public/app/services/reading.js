@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('bpTracker')
+        .module('bpTrackr')
         .factory('BloodPressure', BloodPressure);
 
     BloodPressure.$inject = ['$resource'];

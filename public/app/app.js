@@ -1,4 +1,4 @@
-angular.module('bpTracker', [
+angular.module('bpTrackr', [
     'ngResource',
     'ngMessages',
     'ngRoute',
