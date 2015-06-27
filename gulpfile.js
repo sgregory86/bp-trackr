@@ -28,7 +28,7 @@ gulp.task('jshint', function() {
 
 gulp.task('compress', function() {
     return gulp.src([
-            'public/bower_components/angularjs/angular.min.js',
+            'public/bower_components/angular/angular.min.js',
             'public/bower_components/angular-strap/dist/angular-strap.js',
             'public/bower_components/angular-strap/dist/angular-strap.tpl.js',
             'public/bower_components/angular-messages/angular-messages.js',
