@@ -1,0 +1,30 @@
+{
+  "name": "bpTrackr",
+  "version": "1.0.0",
+  "homepage": "https://github.com/sgregory86/bptrackr",
+  "authors": [
+    "Steven Gregory"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-animate": "~1.4.1",
+    "angular-chart.js": "~0.7.2",
+    "angular-messages": "~1.4.1",
+    "angular-cookies": "~1.4.1",
+    "angular-motion": "~0.4.2",
+    "angular-resource": "~1.4.1",
+    "angular-route": "~1.4.1",
+    "angular-strap": "~2.2.4",
+    "bootstrap-sass": "~3.3.5",
+    "moment": "~2.8.3",
+    "angular": "~1.4.1"
+  }
+}
