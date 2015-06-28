@@ -1,3 +1,4 @@
 node_modules
 public/app/bower_components
 public/app/app.min.js
+public/styles/master.css
