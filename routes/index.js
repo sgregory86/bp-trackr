@@ -19,13 +19,13 @@ router.get('/api/readings/:id', function(req, res, next) {
 });
 
 router.post('/api/readings', function(req, res, next) {
-    var bloodPressureTest = new BloodPressure({
+    var bloodPressure = new BloodPressure({
         date: req.body.selectedDate,
         time: req.body.selectedTime,
         systolic: req.body.systolic,
         diastolic: req.body.diastolic
     });
-    bloodPressureTest.save(function(err) {
+    bloodPressure.save(function(err) {
         if (err) return next(err);
         res.send(200);
     });
