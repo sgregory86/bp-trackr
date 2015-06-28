@@ -1,6 +1,6 @@
 var express = require('express'),
     browserify = require('browserify'),
-    BloodPressure = require('.././public/app/models/bloodPressure'),
+    BloodPressure = require('.././public/app/models/blood-pressure'),
     router = express.Router();
 
 router.get('/api/readings', function(req, res, next) {
