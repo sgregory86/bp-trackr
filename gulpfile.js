@@ -53,4 +53,6 @@ gulp.task('watch', function() {
     gulp.watch('public/app/**/*.js', ['jshint']);
 });
 
-gulp.task('default', ['sass', 'htmlhint', 'jshint', 'watch']);
+gulp.task('build', ['sass', 'compress']);
+
+gulp.task('default', ['htmlhint', 'jshint', 'watch']);
