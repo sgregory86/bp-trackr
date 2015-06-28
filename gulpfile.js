@@ -35,13 +35,13 @@ gulp.task('compress', function() {
             'public/app/bower_components/angular-resource/angular-resource.js',
             'public/app/bower_components/angular-route/angular-route.js',
             'public/app/bower_components/moment/moment.js',
-            'public/app/bundle.js',
             'public/app/app.module.js',
             'public/app/app.route.js',
             'public/app/services/*.js',
             'public/app/controllers/main.js',
             'public/app/controllers/add.js',
-            'public/app/filters/*.js'
+            'public/app/filters/*.js',
+            'public/app/bundle.js'
         ])
         .pipe(plug.concat('app.min.js'))
         .pipe(gulp.dest('public/app'));
