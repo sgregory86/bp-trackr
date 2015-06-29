@@ -40,8 +40,7 @@ gulp.task('compress', function() {
             'public/app/services/*.js',
             'public/app/controllers/main.js',
             'public/app/controllers/add.js',
-            'public/app/filters/*.js',
-            'public/app/bundle.js'
+            'public/app/filters/*.js'
         ])
         .pipe(plug.concat('app.min.js'))
         .pipe(gulp.dest('public/app'));
