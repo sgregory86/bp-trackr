@@ -1,7 +1,7 @@
 (function() {
     'use strict';
 
-    angular.module('bpTrackr.core', [
+    angular.module('app.core', [
         'ngResource',
         'ngMessages',
         'ngRoute',

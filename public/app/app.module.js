@@ -1,7 +1,8 @@
 (function() {
     'use strict';
 
-    angular.module('bpTrackr', [
-        'bpTrackr.core'
+    angular.module('app', [
+        'app.core',
+        'app.dashboard'
     ]);
 })();

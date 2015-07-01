@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('bpTrackr')
+        .module('app')
         .controller('AddCtrl', AddCtrl);
 
     AddCtrl.$inject = ['$alert', 'BloodPressure'];

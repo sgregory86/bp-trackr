@@ -2,12 +2,12 @@
     'use strict';
 
     angular
-        .module('bpTrackr')
-        .controller('MainCtrl', MainCtrl);
+        .module('app.dashboard')
+        .controller('Dashboard', Dashboard);
 
-    MainCtrl.$inject = ['BloodPressure', 'config'];
+    Dashboard.$inject = ['BloodPressure', 'config'];
 
-    function MainCtrl(BloodPressure, config) {
+    function Dashboard(BloodPressure, config) {
         var vm = this;
         vm.readingLimit = config.readingLimit;
         vm.readings = BloodPressure.query();

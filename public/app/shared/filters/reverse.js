@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('bpTrackr')
+        .module('app')
         .filter('reverse', reverse);
 
     function reverse() {

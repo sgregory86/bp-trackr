@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('bpTrackr')
+        .module('app')
         .config(routeConfig);
 
     routeConfig.$inject = ['$locationProvider', '$routeProvider'];
@@ -11,9 +11,9 @@
         $locationProvider.html5Mode(true);
         $routeProvider
             .when('/', {
-                templateUrl: 'app/views/home.html',
+                templateUrl: 'app/dashboard/dashboard.html',
                 controllerAs: 'vm',
-                controller: 'MainCtrl'
+                controller: 'Dashboard'
             })
             .when('/add', {
                 templateUrl: 'app/views/add.html',

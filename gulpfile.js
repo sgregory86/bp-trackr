@@ -39,8 +39,9 @@ gulp.task('compress', function() {
             'public/app/app.route.js',
             'public/app/core/core.module.js',
             'public/app/core/config.js',
+            'public/app/dashboard/dashboard.module.js',
+            'public/app/dashboard/dashboard.controller.js',
             'public/app/shared/services/*.js',
-            'public/app/controllers/main.js',
             'public/app/controllers/add.js',
             'public/app/shared/filters/*.js'
         ])
