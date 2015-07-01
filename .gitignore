@@ -1,4 +1,7 @@
+# Ignore Bower & Node
+bower_components
 node_modules
-public/app/bower_components
-public/app/app.min.js
+
+# Ignore minified CSS & JS
 public/styles/master.css
+public/app/app.min.js
