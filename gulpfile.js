@@ -19,8 +19,7 @@ gulp.task('jshint', function() {
     return gulp.src([
             'public/app/**/*.js',
             '!public/app/app.min.js',
-            '!public/app/bundle.js',
-            '!public/app/bower_components/**'
+            '!bower_components/**'
         ])
         .pipe(plug.jshint())
         .pipe(plug.jshint.reporter('jshint-stylish'));
@@ -28,13 +27,13 @@ gulp.task('jshint', function() {
 
 gulp.task('compress', function() {
     return gulp.src([
-            'public/app/bower_components/angular/angular.min.js',
-            'public/app/bower_components/angular-strap/dist/angular-strap.js',
-            'public/app/bower_components/angular-strap/dist/angular-strap.tpl.js',
-            'public/app/bower_components/angular-messages/angular-messages.js',
-            'public/app/bower_components/angular-resource/angular-resource.js',
-            'public/app/bower_components/angular-route/angular-route.js',
-            'public/app/bower_components/moment/moment.js',
+            'bower_components/angular/angular.min.js',
+            'bower_components/angular-strap/dist/angular-strap.js',
+            'bower_components/angular-strap/dist/angular-strap.tpl.js',
+            'bower_components/angular-messages/angular-messages.js',
+            'bower_components/angular-resource/angular-resource.js',
+            'bower_components/angular-route/angular-route.js',
+            'bower_components/moment/moment.js',
             'public/app/app.module.js',
             'public/app/app.route.js',
             'public/app/core/core.module.js',
