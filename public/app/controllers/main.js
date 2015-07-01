@@ -5,11 +5,11 @@
         .module('bpTrackr')
         .controller('MainCtrl', MainCtrl);
 
-    MainCtrl.$inject = ['BloodPressure'];
+    MainCtrl.$inject = ['BloodPressure', 'config'];
 
-    function MainCtrl(BloodPressure) {
+    function MainCtrl(BloodPressure, config) {
         var vm = this;
-        vm.readingLimit = -5;
+        vm.readingLimit = config.readingLimit;
         vm.readings = BloodPressure.query();
         vm.removeItem = removeItem;
 
