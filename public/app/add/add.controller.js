@@ -3,11 +3,11 @@
 
     angular
         .module('app')
-        .controller('AddCtrl', AddCtrl);
+        .controller('Add', Add);
 
-    AddCtrl.$inject = ['$alert', 'BloodPressure'];
+    Add.$inject = ['$alert', 'BloodPressure'];
 
-    function AddCtrl($alert, BloodPressure) {
+    function Add($alert, BloodPressure) {
 
         var vm = this;
         vm.date = moment().format("M/DD/YY");

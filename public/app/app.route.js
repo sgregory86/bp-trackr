@@ -16,9 +16,9 @@
                 controller: 'Dashboard'
             })
             .when('/add', {
-                templateUrl: 'app/views/add.html',
+                templateUrl: 'app/add/add.html',
                 controllerAs: 'vm',
-                controller: 'AddCtrl'
+                controller: 'Add'
             })
             .otherwise({
                 redirectTo: '/'
