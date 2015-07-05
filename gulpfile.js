@@ -1,6 +1,7 @@
 'use strict';
 
 var gulp = require('gulp'),
+    args = require('yargs').argv,
     plug = require('gulp-load-plugins')();
 
 gulp.task('sass', function() {
@@ -50,6 +51,14 @@ gulp.task('compress', function() {
         ])
         .pipe(plug.concat('app.min.js'))
         .pipe(gulp.dest('public/app'));
+});
+
+gulp.task('bump', function() {
+    return gulp.src(['./bower.json', './package.json'])
+        .pipe(plug.bump({
+            version: args.version
+        }))
+        .pipe(gulp.dest('./'));
 });
 
 gulp.task('watch', function() {
