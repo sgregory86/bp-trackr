@@ -9,6 +9,7 @@ gulp.task('sass', function() {
         .pipe(plug.plumber())
         .pipe(plug.sass())
         .pipe(plug.csso())
+        .pipe(plug.rename('master.min.css'))
         .pipe(gulp.dest('public/styles'));
 });
 
