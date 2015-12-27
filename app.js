@@ -10,8 +10,10 @@ mongoose.connect('mongodb://localhost:27017/bp');
 var app = express();
 
 app.use(logger('dev'));
+app.use(bodyParser.urlencoded({
+    extended: true
+}));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);

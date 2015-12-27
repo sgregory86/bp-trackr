@@ -3,5 +3,5 @@ bower_components
 node_modules
 
 # Ignore minified CSS & JS
-public/styles/master.css
+public/styles/master.min.css
 public/app/app.min.js
