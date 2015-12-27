@@ -9,17 +9,7 @@
     <link href="styles/master.min.css" rel="stylesheet">
   </head>
   <body>
-    <div class="navbar navbar-default navbar-static-top" role="navigation" bs-navbar>
-      <div class="navbar-header">
-        <a class="navbar-brand" href="/">
-          <span class="glyphicon glyphicon-heart"></span>
-        BP<strong>Trackr</strong></a>
-      </div>
-      <ul class="nav navbar-nav">
-        <li data-match-route="/$"><a href="/">Home</a></li>
-        <li data-match-route="/add"><a href="/add">Add</a></li>
-      </ul>
-    </div>
+    <div ng-include="'app/layout/navbar.html'"></div>
     <div ng-view></div>
     <script src="app/app.min.js"></script>
   </body>
