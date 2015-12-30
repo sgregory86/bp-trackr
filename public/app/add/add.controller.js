@@ -5,11 +5,12 @@
         .module('app.add')
         .controller('Add', Add);
 
-    Add.$inject = ['$alert', 'BloodPressure'];
+    Add.$inject = ['$alert', 'dataservice'];
 
-    function Add($alert, BloodPressure) {
+    function Add($alert, dataservice) {
 
-        var vm = this;
+        var vm = this,
+            bloodPressure = dataservice.getReadings();
         vm.date = moment().format("M/DD/YY");
         vm.time = moment().format("h:mm a");
         vm.setDate = setDate;
@@ -25,12 +26,12 @@
         }
 
         function addReading() {
-            BloodPressure.save({
-                selectedDate: vm.setDate(),
-                selectedTime: vm.setTime(),
-                systolic: vm.systolic,
-                diastolic: vm.diastolic
-            }).$promise
+            bloodPressure.save({
+                    selectedDate: vm.setDate(),
+                    selectedTime: vm.setTime(),
+                    systolic: vm.systolic,
+                    diastolic: vm.diastolic
+                }).$promise
                 .then(function() {
                     vm.date = '';
                     vm.time = '';

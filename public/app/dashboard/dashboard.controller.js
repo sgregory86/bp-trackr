@@ -5,12 +5,13 @@
         .module('app.dashboard')
         .controller('Dashboard', Dashboard);
 
-    Dashboard.$inject = ['BloodPressure', 'config'];
+    Dashboard.$inject = ['config', 'dataservice'];
 
-    function Dashboard(BloodPressure, config) {
-        var vm = this;
+    function Dashboard(config, dataservice) {
+        var vm = this,
+            bloodPressure = dataservice.getReadings();
         vm.readingLimit = config.readingLimit;
-        vm.readings = BloodPressure.query();
+        vm.readings = bloodPressure.query();
         vm.removeItem = removeItem;
 
         function removeItem(reading) {
