@@ -3,7 +3,15 @@ BPTrackr
 
 ## Description
 
-A blood pressure web application using Angular, Node, ExpressJS, Mongoose, Gulp, Bootstrap and Sass.
+A blood pressure web application using Angular, Node, Express, Mongoose, Gulp, Bootstrap and Sass.
+
+## Prerequisites
+
+1. Install [Node](http://nodejs.org)
+
+2. Install [MongoDB](https://www.mongodb.org)
+
+3. Install these npm packages `npm i -g bower gulp`
 
 ## Getting Started
 
