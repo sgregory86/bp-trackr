@@ -9,15 +9,15 @@ A blood pressure web application using Angular, Node, Express, Mongoose, Gulp, B
 
 1. Install [Node](http://nodejs.org)
 
-2. Install [MongoDB](https://www.mongodb.org)
+1. Install [MongoDB](https://www.mongodb.org)
 
-3. Install these npm packages `npm i -g bower gulp`
+1. Install these npm packages `npm i -g bower gulp`
 
 ## Getting Started
 
 1. Clone this repo
 
-1. Run `npm install`
+1. Run `npm i`
 
 1. Run `bower install`
 
@@ -25,4 +25,4 @@ A blood pressure web application using Angular, Node, Express, Mongoose, Gulp, B
 
 1. Start the server `npm start`
 
-1. Navigate to http://localhost:3001
+1. Go to [http://localhost:3001](http://localhost:3001)
