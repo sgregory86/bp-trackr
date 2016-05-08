@@ -7,26 +7,26 @@
     "start": "node bin/www.js"
   },
   "dependencies": {
-    "body-parser": "^1.14.2",
-    "express": "^4.13.3",
-    "mongoose": "^4.3.4",
-    "morgan": "^1.6.1",
-    "path": "^0.4.10"
+    "body-parser": "^1.15.1",
+    "express": "^4.13.4",
+    "mongoose": "^4.4.15",
+    "morgan": "^1.7.0",
+    "path": "^0.12.7"
   },
   "devDependencies": {
-    "gulp": "^3.9.0",
-    "gulp-bump": "^1.0.0",
+    "gulp": "^3.9.1",
+    "gulp-bump": "^2.1.0",
     "gulp-concat": "^2.6.0",
-    "gulp-csso": "^0.2.9",
-    "gulp-htmlhint": "^0.3.0",
+    "gulp-csso": "^2.0.0",
+    "gulp-htmlhint": "^0.3.1",
     "gulp-jshint": "^2.0.0",
-    "gulp-load-plugins": "^1.1.0",
-    "gulp-plumber": "^1.0.1",
+    "gulp-load-plugins": "^1.2.2",
+    "gulp-plumber": "^1.1.0",
     "gulp-rename": "^1.2.2",
-    "gulp-sass": "^2.1.1",
-    "gulp-uglify": "^1.5.1",
-    "jshint-stylish": "^2.1.0",
-    "yargs": "^3.31.0"
+    "gulp-sass": "^2.3.1",
+    "gulp-uglify": "^1.5.3",
+    "jshint-stylish": "^2.2.0",
+    "yargs": "^4.7.0"
   },
   "description": "A blood pressure app in the works",
   "main": "app.js",
