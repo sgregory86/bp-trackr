@@ -5,24 +5,24 @@ var gulp = require('gulp'),
     plug = require('gulp-load-plugins')();
 
 gulp.task('sass', function() {
-    return gulp.src('public/styles/master.scss')
+    return gulp.src('src/client/styles/master.scss')
         .pipe(plug.plumber())
         .pipe(plug.sass())
         .pipe(plug.csso())
         .pipe(plug.rename('master.min.css'))
-        .pipe(gulp.dest('public/styles'));
+        .pipe(gulp.dest('src/client/styles'));
 });
 
 gulp.task('htmlhint', function() {
-    return gulp.src('public/index.html')
+    return gulp.src('src/client/index.html')
         .pipe(plug.htmlhint())
         .pipe(plug.htmlhint.reporter());
 });
 
 gulp.task('jshint', function() {
     return gulp.src([
-            'public/app/**/*.js',
-            '!public/app/app.min.js',
+            'src/client/app/**/*.js',
+            '!src/client/app/app.min.js',
             '!bower_components/**'
         ])
         .pipe(plug.jshint())
@@ -38,20 +38,20 @@ gulp.task('compress', function() {
             'bower_components/angular-resource/angular-resource.js',
             'bower_components/angular-route/angular-route.js',
             'bower_components/moment/moment.js',
-            'public/app/app.module.js',
-            'public/app/app.route.js',
-            'public/app/core/core.module.js',
-            'public/app/core/config.js',
-            'public/app/core/dataservice.js',
-            'public/app/dashboard/dashboard.module.js',
-            'public/app/dashboard/dashboard.controller.js',
-            'public/app/add/add.module.js',
-            'public/app/add/add.controller.js',
-            'public/app/controllers/add.js',
-            'public/app/shared/filters/*.js'
+            'src/client/app/app.module.js',
+            'src/client/app/app.route.js',
+            'src/client/app/core/core.module.js',
+            'src/client/app/core/config.js',
+            'src/client/app/core/dataservice.js',
+            'src/client/app/dashboard/dashboard.module.js',
+            'src/client/app/dashboard/dashboard.controller.js',
+            'src/client/app/add/add.module.js',
+            'src/client/app/add/add.controller.js',
+            'src/client/app/controllers/add.js',
+            'src/client/app/shared/filters/*.js'
         ])
         .pipe(plug.concat('app.min.js'))
-        .pipe(gulp.dest('public/app'));
+        .pipe(gulp.dest('src/client/app'));
 });
 
 gulp.task('bump', function() {
@@ -63,9 +63,9 @@ gulp.task('bump', function() {
 });
 
 gulp.task('watch', function() {
-    gulp.watch('public/styles/*.scss', ['sass']);
-    gulp.watch('public/index.html', ['htmlhint']);
-    gulp.watch('public/app/**/*.js', ['jshint']);
+    gulp.watch('src/client/styles/*.scss', ['sass']);
+    gulp.watch('src/client/index.html', ['htmlhint']);
+    gulp.watch('src/client/app/**/*.js', ['jshint']);
 });
 
 gulp.task('build', ['sass', 'compress']);
