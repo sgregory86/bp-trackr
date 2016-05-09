@@ -1,7 +1,10 @@
-# Ignore Bower & Node
+# Bower & Node
 bower_components
 node_modules
 
-# Ignore minified CSS & JS
+# TypeScript, Browserify
+src/client/app/output.js
+src/client/app/bundle.js
+
+# CSS
 src/client/styles/master.min.css
-src/client/app/app.min.js

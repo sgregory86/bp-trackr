@@ -5,24 +5,23 @@
         .module('app.add')
         .controller('Add', Add);
 
-    Add.$inject = ['$alert', 'dataservice'];
+    Add.$inject = ['$alert', '$filter', 'dataservice'];
 
-    function Add($alert, dataservice) {
-
-        var vm = this,
-            bloodPressure = dataservice.getReadings();
-        vm.date = moment().format("M/DD/YY");
-        vm.time = moment().format("h:mm a");
+    function Add($alert, $filter, dataservice) {
+        var vm = this;
+        var bloodPressure = dataservice.getReadings();
+        vm.date = $filter('date')(new Date(), 'M/dd/yy');
+        vm.time = $filter('date')(new Date(), 'h:mm a');
         vm.setDate = setDate;
         vm.setTime = setTime;
         vm.addReading = addReading;
 
         function setDate() {
-            return vm.selectedDate ? moment(vm.selectedDate).format("M/DD/YY") : vm.date;
+            return vm.selectedDate ? $filter('date')(vm.selectedDate, 'M/dd/yy') : vm.date;
         }
 
         function setTime() {
-            return vm.selectedTime ? moment(vm.selectedTime).format("h:mm a") : vm.time;
+            return vm.selectedTime ? $filter('date')(vm.selectedTime, 'h:mm a') : vm.time;
         }
 
         function addReading() {

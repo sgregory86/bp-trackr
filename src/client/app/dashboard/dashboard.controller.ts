@@ -8,8 +8,8 @@
     Dashboard.$inject = ['config', 'dataservice'];
 
     function Dashboard(config, dataservice) {
-        var vm = this,
-            bloodPressure = dataservice.getReadings();
+        var vm = this;
+        var bloodPressure = dataservice.getReadings();
         vm.readingLimit = config.readingLimit;
         vm.readings = bloodPressure.query();
         vm.removeItem = removeItem;
