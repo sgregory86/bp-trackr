@@ -1,4 +1,4 @@
-(function() {
+namespace app.core {
     'use strict';
 
     angular.module('app.core', [
@@ -7,4 +7,4 @@
         'ngRoute',
         'mgcrea.ngStrap'
     ]);
-})();
+}

@@ -1,4 +1,4 @@
-(function() {
+namespace app.dashboard {
     'use strict';
 
     angular
@@ -19,4 +19,4 @@
             reading.$delete(reading);
         }
     }
-})();
+}

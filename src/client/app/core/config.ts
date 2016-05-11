@@ -1,4 +1,4 @@
-(function() {
+namespace app.core {
     'use strict';
 
     var core = angular.module('app.core');
@@ -10,4 +10,4 @@
     };
 
     core.value('config', config);
-})();
+}

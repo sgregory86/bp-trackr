@@ -1,4 +1,4 @@
-(function() {
+namespace app.core {
     'use strict';
 
     angular
@@ -17,4 +17,4 @@
             return $resource('/api/readings/:_id');
         }
     }
-})();
+}

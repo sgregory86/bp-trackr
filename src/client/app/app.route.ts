@@ -1,4 +1,4 @@
-(function() {
+namespace app {
     'use strict';
 
     angular
@@ -24,4 +24,4 @@
                 redirectTo: '/'
             });
     }
-})();
+}

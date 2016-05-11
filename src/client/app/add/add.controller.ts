@@ -1,4 +1,4 @@
-(function() {
+namespace app.add {
     'use strict';
 
     angular
@@ -63,4 +63,4 @@
                 });
         }
     }
-})();
+}

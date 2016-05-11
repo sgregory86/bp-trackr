@@ -42,7 +42,8 @@ gulp.task('ts', ['tslint'], function() {
         'src/client/app/dashboard/dashboard.controller.ts',
         'src/client/app/add/add.module.ts',
         'src/client/app/add/add.controller.ts',
-        'src/client/app/shared/filters/reverse.ts'
+        'src/client/app/shared/filters/filters.module.ts',
+        'src/client/app/shared/filters/filters.reverse.ts'
     ];
     var tsResult = gulp.src(sourceTsFiles)
         .pipe(ts(tsProject));

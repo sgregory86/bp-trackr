@@ -1,8 +1,8 @@
-(function() {
+namespace app.filters {
     'use strict';
 
     angular
-        .module('app')
+        .module('app.filters')
         .filter('reverse', reverse);
 
     function reverse() {
@@ -10,4 +10,4 @@
             return items.slice().reverse();
         };
     }
-})();
+}
