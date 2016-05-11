@@ -19,7 +19,6 @@
     "gulp-bump": "^2.1.0",
     "gulp-concat": "^2.6.0",
     "gulp-csso": "^2.0.0",
-    "gulp-htmlhint": "^0.3.1",
     "gulp-load-plugins": "^1.2.2",
     "gulp-plumber": "^1.1.0",
     "gulp-rename": "^1.2.2",

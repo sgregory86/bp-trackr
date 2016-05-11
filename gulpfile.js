@@ -18,12 +18,6 @@ gulp.task('sass', function() {
         .pipe(gulp.dest('src/client/styles'));
 });
 
-gulp.task('htmlhint', function() {
-    return gulp.src('src/client/index.html')
-        .pipe(plug.htmlhint())
-        .pipe(plug.htmlhint.reporter());
-});
-
 gulp.task('tslint', function() {
     return gulp.src(['src/client/app/**/*.ts'])
         .pipe(tslint())
@@ -77,10 +71,9 @@ gulp.task('bump', function() {
 
 gulp.task('watch', function() {
     gulp.watch('src/client/styles/*.scss', ['sass']);
-    gulp.watch('src/client/index.html', ['htmlhint']);
     gulp.watch('src/client/app/**/*.ts', ['tslint']);
 });
 
 gulp.task('build', ['sass', 'bundle']);
 
-gulp.task('default', ['htmlhint', 'build', 'watch']);
+gulp.task('default', ['build', 'watch']);
