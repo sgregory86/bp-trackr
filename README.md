@@ -1,9 +1,7 @@
 BPTrackr
 ====================
 
-## Description
-
-A blood pressure web application using Angular, Node, Express, Mongoose, Gulp, Bootstrap and Sass.
+A blood pressure web application using AngularJS, TypeScript, Node, Express, Mongoose, Gulp, Bootstrap and Sass.
 
 ## Prerequisites
 
