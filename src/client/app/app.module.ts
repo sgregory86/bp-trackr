@@ -1,10 +1,11 @@
 namespace app {
     'use strict';
 
-    angular.module('app', [
-        'app.core',
-        'app.dashboard',
-        'app.add',
-        'app.filters'
-    ]);
+    angular
+        .module('app', [
+            'app.core',
+            'app.dashboard',
+            'app.add',
+            'app.filters'
+        ]);
 }
