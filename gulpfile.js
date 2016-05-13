@@ -35,9 +35,7 @@ gulp.task('ts', ['tslint'], function() {
         'src/client/app/dashboard/dashboard.module.ts',
         'src/client/app/dashboard/dashboard.controller.ts',
         'src/client/app/add/add.module.ts',
-        'src/client/app/add/add.controller.ts',
-        'src/client/app/shared/filters/filters.module.ts',
-        'src/client/app/shared/filters/filters.reverse.ts'
+        'src/client/app/add/add.controller.ts'
     ];
     var tsResult = gulp.src(sourceTsFiles)
         .pipe(ts(tsProject));
