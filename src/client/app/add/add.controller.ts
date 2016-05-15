@@ -5,29 +5,21 @@ namespace app.add {
         .module('app.add')
         .controller('Add', Add);
 
-    Add.$inject = ['$alert', '$filter', 'dataservice'];
+    Add.$inject = ['$alert', 'dataservice', 'reading'];
 
-    function Add($alert, $filter, dataservice) {
+    function Add($alert, dataservice, reading) {
         var vm = this;
+        var dateFormat = 'M/dd/yy';
+        var timeFormat = 'h:mm a';
         var bloodPressure = dataservice.getReadings();
-        vm.date = $filter('date')(new Date(), 'M/dd/yy');
-        vm.time = $filter('date')(new Date(), 'h:mm a');
-        vm.setDate = setDate;
-        vm.setTime = setTime;
+        vm.date = reading.currentDateTime(dateFormat);
+        vm.time = reading.currentDateTime(timeFormat);
         vm.addReading = addReading;
-
-        function setDate() {
-            return vm.selectedDate ? $filter('date')(vm.selectedDate, 'M/dd/yy') : vm.date;
-        }
-
-        function setTime() {
-            return vm.selectedTime ? $filter('date')(vm.selectedTime, 'h:mm a') : vm.time;
-        }
 
         function addReading() {
             bloodPressure.save({
-                    selectedDate: vm.setDate(),
-                    selectedTime: vm.setTime(),
+                    selectedDate: reading.setDateTime(vm.selectedDate, dateFormat),
+                    selectedTime: reading.setDateTime(vm.selectedTime, timeFormat),
                     systolic: vm.systolic,
                     diastolic: vm.diastolic
                 }).$promise
