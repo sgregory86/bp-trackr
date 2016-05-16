@@ -7,7 +7,7 @@ namespace app.add {
 
     Add.$inject = ['$alert', 'dataservice', 'reading'];
 
-    function Add($alert, dataservice, reading) {
+    function Add($alert: any, dataservice: any, reading: any) {
         var vm = this;
         var dateFormat = 'M/dd/yy';
         var timeFormat = 'h:mm a';
@@ -16,7 +16,7 @@ namespace app.add {
         vm.time = reading.currentDateTime(timeFormat);
         vm.addReading = addReading;
 
-        function addReading() {
+        function addReading(): void {
             bloodPressure.save({
                     selectedDate: reading.setDateTime(vm.selectedDate, dateFormat),
                     selectedTime: reading.setDateTime(vm.selectedTime, timeFormat),
@@ -38,7 +38,7 @@ namespace app.add {
                         duration: 3
                     });
                 })
-                .catch(function(response) {
+                .catch(function(response: any) {
                     vm.date = '';
                     vm.time = '';
                     vm.selectedDate = '';

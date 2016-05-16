@@ -7,18 +7,18 @@ namespace app.add {
 
     reading.$inject = ['$filter'];
 
-    function reading($filter) {
+    function reading($filter: ng.IFilterService) {
         var service = {
             currentDateTime: currentDateTime,
             setDateTime: setDateTime
         };
         return service;
 
-        function currentDateTime(format) {
+        function currentDateTime(format: string): string {
             return $filter('date')(new Date(), format);
         }
 
-        function setDateTime(selectedDateTime, format) {
+        function setDateTime(selectedDateTime: Date, format: string): string {
             return selectedDateTime ? $filter('date')(selectedDateTime, format) : currentDateTime(format);
         }
     }

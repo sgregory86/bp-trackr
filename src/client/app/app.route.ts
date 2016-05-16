@@ -7,7 +7,7 @@ namespace app {
 
     routeConfig.$inject = ['$locationProvider', '$routeProvider'];
 
-    function routeConfig($locationProvider, $routeProvider) {
+    function routeConfig($locationProvider: ng.ILocationProvider, $routeProvider: ng.route.IRouteProvider) {
         $locationProvider.html5Mode(true);
         $routeProvider
             .when('/', {

@@ -7,13 +7,13 @@ namespace app.core {
 
     dataservice.$inject = ['$resource'];
 
-    function dataservice($resource) {
+    function dataservice($resource: ng.resource.IResourceService) {
         var service = {
             getReadings: getReadings
         };
         return service;
 
-        function getReadings() {
+        function getReadings(): ng.resource.IResourceClass<any> {
             return $resource('/api/readings/:_id');
         }
     }
