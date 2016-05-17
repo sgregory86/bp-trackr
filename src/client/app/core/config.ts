@@ -1,10 +1,14 @@
 namespace app.core {
     'use strict';
 
+    var dateFormat = 'M/dd/yy';
     var readingLimit = -5;
+    var timeFormat = 'h:mm a';
 
     var config = {
-        readingLimit: readingLimit
+        dateFormat: dateFormat,
+        readingLimit: readingLimit,
+        timeFormat: timeFormat
     };
 
     angular

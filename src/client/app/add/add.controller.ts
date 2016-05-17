@@ -5,21 +5,19 @@ namespace app.add {
         .module('app.add')
         .controller('Add', Add);
 
-    Add.$inject = ['$alert', 'dataservice', 'reading'];
+    Add.$inject = ['$alert', 'config', 'dataservice', 'reading'];
 
-    function Add($alert: any, dataservice: any, reading: any) {
+    function Add($alert: mgcrea.ngStrap.alert.IAlertService, config: any, dataservice: any, reading: any) {
         var vm = this;
-        var dateFormat = 'M/dd/yy';
-        var timeFormat = 'h:mm a';
         var bloodPressure = dataservice.getReadings();
-        vm.date = reading.currentDateTime(dateFormat);
-        vm.time = reading.currentDateTime(timeFormat);
+        vm.date = reading.currentDateTime(config.dateFormat);
+        vm.time = reading.currentDateTime(config.timeFormat);
         vm.addReading = addReading;
 
         function addReading(): void {
             bloodPressure.save({
-                    selectedDate: reading.setDateTime(vm.selectedDate, dateFormat),
-                    selectedTime: reading.setDateTime(vm.selectedTime, timeFormat),
+                    selectedDate: reading.setDateTime(vm.selectedDate, config.dateFormat),
+                    selectedTime: reading.setDateTime(vm.selectedTime, config.timeFormat),
                     systolic: vm.systolic,
                     diastolic: vm.diastolic
                 }).$promise
