@@ -31,7 +31,7 @@ gulp.task('ts', ['tslint'], function() {
         'src/client/app/app.route.ts',
         'src/client/app/core/core.module.ts',
         'src/client/app/core/config.ts',
-        'src/client/app/core/dataservice.ts',
+        'src/client/app/core/data.service.ts',
         'src/client/app/dashboard/dashboard.module.ts',
         'src/client/app/dashboard/dashboard.controller.ts',
         'src/client/app/add/add.module.ts',

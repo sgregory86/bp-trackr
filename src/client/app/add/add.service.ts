@@ -1,25 +1,20 @@
 namespace app.add {
     'use strict';
 
-    angular
-        .module('app.add')
-        .service('reading', reading);
+    export class Reading {
+        static $inject = ['$filter'];
+        constructor(private $filter: ng.IFilterService) {}
 
-    reading.$inject = ['$filter'];
-
-    function reading($filter: ng.IFilterService) {
-        var service = {
-            currentDateTime: currentDateTime,
-            setDateTime: setDateTime
-        };
-        return service;
-
-        function currentDateTime(format: string): string {
-            return $filter('date')(new Date(), format);
+        currentDateTime(format: string): string {
+            return this.$filter('date')(new Date(), format);
         }
 
-        function setDateTime(selectedDateTime: Date, format: string): string {
-            return selectedDateTime ? $filter('date')(selectedDateTime, format) : currentDateTime(format);
+        setDateTime(selectedDateTime: Date, format: string): string {
+            return selectedDateTime ? this.$filter('date')(selectedDateTime, format) : this.currentDateTime(format);
         }
     }
+
+    angular
+        .module('app.add')
+        .service('reading', Reading);
 }
