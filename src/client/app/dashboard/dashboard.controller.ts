@@ -1,22 +1,20 @@
 namespace app.dashboard {
     'use strict';
 
+    export class Dashboard {
+        static $inject = ['config', 'dataservice'];
+        constructor(private config: any, private dataservice: any) {}
+
+        bloodPressure = this.dataservice.getReadings();
+        readingLimit = this.config.readingLimit;
+        readings = this.bloodPressure.query();
+
+        removeItem(reading: ng.resource.IResource<any>): void {
+            this.dataservice.deleteReading(reading, this.readings);
+        }
+    }
+
     angular
         .module('app.dashboard')
         .controller('Dashboard', Dashboard);
-
-    Dashboard.$inject = ['config', 'dataservice'];
-
-    function Dashboard(config: any, dataservice: any) {
-        var vm = this;
-        var bloodPressure = dataservice.getReadings();
-        vm.readingLimit = config.readingLimit;
-        vm.readings = bloodPressure.query();
-        vm.removeItem = removeItem;
-
-        function removeItem(reading: ng.resource.IResource<any>): void {
-            vm.readings.splice(vm.readings.indexOf(reading), 1);
-            reading.$delete(reading);
-        }
-    }
 }
