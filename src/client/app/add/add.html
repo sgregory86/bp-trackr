@@ -2,7 +2,7 @@
   <div class="panel panel-default">
     <div class="panel-heading">Add Blood Pressure</div>
     <div class="panel-body">
-      <form class="form" method="post" ng-submit="vm.addReading()" name="addForm" role="form">
+      <form class="form" method="post" ng-submit="vm.saveReading()" name="addForm" role="form">
         <div class="form-group" ng-class="{ 'has-error' : vm.addForm.selectedDate.$invalid && vm.addForm.selectedDate.$dirty }">
           <label class="control-label"><span class="glyphicon glyphicon-calendar"></span>Date</label>
           <input class="form-control" type="text" name="selectedDate" ng-model="vm.selectedDate" placeholder="{{vm.date}}" bs-datepicker>

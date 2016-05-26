@@ -1,7 +1,7 @@
 namespace app.dashboard {
     'use strict';
 
-    export class Dashboard {
+    export class DashboardController {
         static $inject = ['config', 'dataservice'];
         constructor(private config: any, private dataservice: any) {}
 
@@ -16,5 +16,5 @@ namespace app.dashboard {
 
     angular
         .module('app.dashboard')
-        .controller('Dashboard', Dashboard);
+        .controller('DashboardController', DashboardController);
 }

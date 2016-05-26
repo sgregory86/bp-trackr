@@ -1,7 +1,7 @@
-namespace app.add {
+namespace app.core {
     'use strict';
 
-    export class Reading {
+    export class TimeService {
         static $inject = ['$filter'];
         constructor(private $filter: ng.IFilterService) {}
 
@@ -15,6 +15,6 @@ namespace app.add {
     }
 
     angular
-        .module('app.add')
-        .service('reading', Reading);
+        .module('app.core')
+        .service('timeservice', TimeService);
 }

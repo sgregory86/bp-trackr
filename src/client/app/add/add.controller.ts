@@ -1,17 +1,17 @@
 namespace app.add {
     'use strict';
 
-    function Add($alert: mgcrea.ngStrap.alert.IAlertService, config: any, dataservice: any, reading: any) {
+    function AddController($alert: mgcrea.ngStrap.alert.IAlertService, config: any, dataservice: any, timeservice: any) {
         var vm = this;
         var bloodPressure = dataservice.getReadings();
-        vm.date = reading.currentDateTime(config.dateFormat);
-        vm.time = reading.currentDateTime(config.timeFormat);
-        vm.addReading = addReading;
+        vm.date = timeservice.currentDateTime(config.dateFormat);
+        vm.time = timeservice.currentDateTime(config.timeFormat);
+        vm.saveReading = saveReading;
 
-        function addReading(): void {
+        function saveReading(): void {
             bloodPressure.save({
-                selectedDate: reading.setDateTime(vm.selectedDate, config.dateFormat),
-                selectedTime: reading.setDateTime(vm.selectedTime, config.timeFormat),
+                selectedDate: timeservice.setDateTime(vm.selectedDate, config.dateFormat),
+                selectedTime: timeservice.setDateTime(vm.selectedTime, config.timeFormat),
                 systolic: vm.systolic,
                 diastolic: vm.diastolic
             }).$promise.then(function() {
@@ -46,9 +46,9 @@ namespace app.add {
         }
     }
 
-    Add.$inject = ['$alert', 'config', 'dataservice', 'reading'];
+    AddController.$inject = ['$alert', 'config', 'dataservice', 'timeservice'];
 
     angular
         .module('app.add')
-        .controller('Add', Add);
+        .controller('AddController', AddController);
 }

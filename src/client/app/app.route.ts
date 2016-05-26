@@ -6,11 +6,11 @@ namespace app {
         $routeProvider.when('/', {
             templateUrl: 'app/dashboard/dashboard.html',
             controllerAs: 'vm',
-            controller: 'Dashboard'
+            controller: 'DashboardController'
         }).when('/add', {
             templateUrl: 'app/add/add.html',
             controllerAs: 'vm',
-            controller: 'Add'
+            controller: 'AddController'
         }).otherwise({
             redirectTo: '/'
         });
