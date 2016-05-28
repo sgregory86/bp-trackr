@@ -3,7 +3,7 @@ namespace app.dashboard {
 
     export class DashboardController {
         static $inject = ['config', 'dataservice'];
-        constructor(private config: any, private dataservice: any) {}
+        constructor(private config: { readingLimit: number }, private dataservice: app.core.DataService) {}
 
         bloodPressure = this.dataservice.getReadings();
         readingLimit = this.config.readingLimit;

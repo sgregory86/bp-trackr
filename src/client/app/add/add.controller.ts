@@ -1,7 +1,7 @@
 namespace app.add {
     'use strict';
 
-    function AddController($alert: mgcrea.ngStrap.alert.IAlertService, config: any, dataservice: any, timeservice: any) {
+    function AddController($alert: mgcrea.ngStrap.alert.IAlertService, config: { dateFormat: string, timeFormat: string }, dataservice: app.core.DataService, timeservice: app.core.TimeService) {
         var vm = this;
         var bloodPressure = dataservice.getReadings();
         vm.date = timeservice.currentDateTime(config.dateFormat);
