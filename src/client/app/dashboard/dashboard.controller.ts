@@ -5,11 +5,10 @@ namespace app.dashboard {
         static $inject = ['config', 'dataservice'];
         constructor(private config: { readingLimit: number }, private dataservice: app.core.DataService) {}
 
-        bloodPressure = this.dataservice.getReadings();
         readingLimit = this.config.readingLimit;
-        readings = this.bloodPressure.query();
+        readings = this.dataservice.getReadings();
 
-        removeItem(reading: ng.resource.IResource<any>): void {
+        removeItem(reading: ng.resource.IResource<Object>): void {
             this.dataservice.deleteReading(reading, this.readings);
         }
     }

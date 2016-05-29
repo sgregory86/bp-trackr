@@ -3,13 +3,12 @@ namespace app.add {
 
     function AddController($alert: mgcrea.ngStrap.alert.IAlertService, config: { dateFormat: string, timeFormat: string }, dataservice: app.core.DataService, timeservice: app.core.TimeService) {
         var vm = this;
-        var bloodPressure = dataservice.getReadings();
         vm.date = timeservice.currentDateTime(config.dateFormat);
         vm.time = timeservice.currentDateTime(config.timeFormat);
         vm.saveReading = saveReading;
 
         function saveReading(): void {
-            bloodPressure.save({
+            dataservice.saveReading({
                 selectedDate: timeservice.setDateTime(vm.selectedDate, config.dateFormat),
                 selectedTime: timeservice.setDateTime(vm.selectedTime, config.timeFormat),
                 systolic: vm.systolic,

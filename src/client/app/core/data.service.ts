@@ -5,11 +5,21 @@ namespace app.core {
         static $inject = ['$resource'];
         constructor(private $resource: ng.resource.IResourceService) {}
 
-        getReadings(): ng.resource.IResourceClass<any> {
+        getResource(): ng.resource.IResourceClass<Object> {
             return this.$resource('/api/readings/:_id');
         }
 
-        deleteReading(reading: ng.resource.IResource<any> , readings: any): ng.IPromise<ng.resource.IResourceService> {
+        getReadings(): Object {
+            var reading = this.getResource();
+            return reading.query();
+        }
+
+        saveReading(item: Object): any {
+            var reading = this.getResource();
+            return reading.save(item);
+        }
+
+        deleteReading(reading: ng.resource.IResource<Object>, readings: any): ng.IPromise<ng.resource.IResourceService> {
             readings.splice(readings.indexOf(reading), 1);
             return reading.$delete(reading);
         }
