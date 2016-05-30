@@ -34,8 +34,10 @@ gulp.task('ts', ['tslint'], function() {
         'src/client/app/core/data.service.ts',
         'src/client/app/core/time.service.ts',
         'src/client/app/dashboard/dashboard.module.ts',
+        'src/client/app/dashboard/dashboard.model.ts',
         'src/client/app/dashboard/dashboard.controller.ts',
         'src/client/app/reading/reading.module.ts',
+        'src/client/app/reading/reading.model.ts',
         'src/client/app/reading/reading.controller.ts'
     ];
     var tsResult = gulp.src(sourceTsFiles)

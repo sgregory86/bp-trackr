@@ -1,7 +1,7 @@
 namespace app.reading {
     'use strict';
 
-    export class ReadingController {
+    export class ReadingController implements IReading {
         static $inject = ['$location', 'config', 'dataservice', 'timeservice'];
         constructor(private $location: ng.ILocationService,
             private config: { dateFormat: string, timeFormat: string },
@@ -15,7 +15,7 @@ namespace app.reading {
         selectedDate: Date;
         selectedTime: Date;
 
-        addReading(): void {
+        addReading() {
             this.dataservice.saveReading({
                 selectedDate: this.timeservice.setDateTime(this.selectedDate, this.config.dateFormat),
                 selectedTime: this.timeservice.setDateTime(this.selectedTime, this.config.timeFormat),

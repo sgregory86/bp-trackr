@@ -1,7 +1,7 @@
 namespace app.dashboard {
     'use strict';
 
-    export class DashboardController {
+    export class DashboardController implements IDashboard {
         static $inject = ['config', 'dataservice'];
         constructor(private config: { readingLimit: number },
             private dataservice: app.core.DataService) {}
@@ -9,7 +9,7 @@ namespace app.dashboard {
         readingLimit = this.config.readingLimit;
         readings = this.dataservice.getReadings();
 
-        removeItem(reading: ng.resource.IResource<Object>): void {
+        removeItem(reading: ng.resource.IResource<Object>) {
             this.dataservice.deleteReading(reading, this.readings);
         }
     }
