@@ -3,7 +3,8 @@ namespace app.dashboard {
 
     export class DashboardController {
         static $inject = ['config', 'dataservice'];
-        constructor(private config: { readingLimit: number }, private dataservice: app.core.DataService) {}
+        constructor(private config: { readingLimit: number },
+            private dataservice: app.core.DataService) {}
 
         readingLimit = this.config.readingLimit;
         readings = this.dataservice.getReadings();

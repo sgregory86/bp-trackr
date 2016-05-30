@@ -1,51 +1,30 @@
 namespace app.add {
     'use strict';
 
-    function AddController($alert: mgcrea.ngStrap.alert.IAlertService, config: { dateFormat: string, timeFormat: string }, dataservice: app.core.DataService, timeservice: app.core.TimeService) {
-        var vm = this;
-        vm.date = timeservice.currentDateTime(config.dateFormat);
-        vm.time = timeservice.currentDateTime(config.timeFormat);
-        vm.saveReading = saveReading;
+    export class AddController {
+        static $inject = ['$location', 'config', 'dataservice', 'timeservice'];
+        constructor(private $location: ng.ILocationService,
+            private config: { dateFormat: string, timeFormat: string },
+            private dataservice: app.core.DataService,
+            private timeservice: app.core.TimeService) {}
 
-        function saveReading(): void {
-            dataservice.saveReading({
-                selectedDate: timeservice.setDateTime(vm.selectedDate, config.dateFormat),
-                selectedTime: timeservice.setDateTime(vm.selectedTime, config.timeFormat),
-                systolic: vm.systolic,
-                diastolic: vm.diastolic
-            }).$promise.then(function() {
-                vm.date = '';
-                vm.time = '';
-                vm.selectedDate = '';
-                vm.selectedTime = '';
-                vm.systolic = '';
-                vm.diastolic = '';
-                $alert({
-                    content: 'Blood pressure has been added.',
-                    animation: 'fadeZoomFadeDown',
-                    placement: 'top-right',
-                    type: 'info',
-                    duration: 3
-                });
-            }).catch(function(response: any) {
-                vm.date = '';
-                vm.time = '';
-                vm.selectedDate = '';
-                vm.selectedTime = '';
-                vm.systolic = '';
-                vm.diastolic = '';
-                $alert({
-                    content: response.data.message,
-                    animation: 'fadeZoomFadeDown',
-                    placement: 'top-right',
-                    type: 'info',
-                    duration: 3
-                });
+        date = this.timeservice.currentDateTime(this.config.dateFormat);
+        time = this.timeservice.currentDateTime(this.config.timeFormat);
+        systolic: number;
+        diastolic: number;
+        selectedDate: Date;
+        selectedTime: Date;
+
+        saveReading(): void {
+            this.dataservice.saveReading({
+                selectedDate: this.timeservice.setDateTime(this.selectedDate, this.config.dateFormat),
+                selectedTime: this.timeservice.setDateTime(this.selectedTime, this.config.timeFormat),
+                systolic: this.systolic,
+                diastolic: this.diastolic
             });
+            this.$location.path('/');
         }
     }
-
-    AddController.$inject = ['$alert', 'config', 'dataservice', 'timeservice'];
 
     angular
         .module('app.add')
