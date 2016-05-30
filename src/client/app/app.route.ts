@@ -8,9 +8,9 @@ namespace app {
             controllerAs: 'vm',
             controller: 'DashboardController'
         }).when('/add', {
-            templateUrl: 'app/add/add.html',
+            templateUrl: 'app/reading/reading.html',
             controllerAs: 'vm',
-            controller: 'AddController'
+            controller: 'ReadingController'
         }).otherwise({
             redirectTo: '/'
         });

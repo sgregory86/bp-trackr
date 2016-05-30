@@ -14,7 +14,7 @@ namespace app.core {
             return reading.query();
         }
 
-        saveReading(item: Object): any {
+        saveReading(item: Object): Object {
             var reading = this.getResource();
             return reading.save(item);
         }

@@ -1,7 +1,7 @@
-namespace app.add {
+namespace app.reading {
     'use strict';
 
-    export class AddController {
+    export class ReadingController {
         static $inject = ['$location', 'config', 'dataservice', 'timeservice'];
         constructor(private $location: ng.ILocationService,
             private config: { dateFormat: string, timeFormat: string },
@@ -15,7 +15,7 @@ namespace app.add {
         selectedDate: Date;
         selectedTime: Date;
 
-        saveReading(): void {
+        addReading(): void {
             this.dataservice.saveReading({
                 selectedDate: this.timeservice.setDateTime(this.selectedDate, this.config.dateFormat),
                 selectedTime: this.timeservice.setDateTime(this.selectedTime, this.config.timeFormat),
@@ -27,6 +27,6 @@ namespace app.add {
     }
 
     angular
-        .module('app.add')
-        .controller('AddController', AddController);
+        .module('app.reading')
+        .controller('ReadingController', ReadingController);
 }

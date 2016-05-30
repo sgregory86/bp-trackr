@@ -5,6 +5,6 @@ namespace app {
         .module('app', [
             'app.core',
             'app.dashboard',
-            'app.add'
+            'app.reading'
         ]);
 }
