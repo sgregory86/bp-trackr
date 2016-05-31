@@ -1,11 +1,11 @@
 namespace app.core {
     'use strict';
 
-    var dateFormat = 'M/dd/yy';
-    var readingLimit = -5;
-    var timeFormat = 'h:mm a';
+    let dateFormat = 'M/dd/yy';
+    let readingLimit = -5;
+    let timeFormat = 'h:mm a';
 
-    var config = {
+    let config = {
         dateFormat: dateFormat,
         readingLimit: readingLimit,
         timeFormat: timeFormat
