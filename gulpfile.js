@@ -51,7 +51,6 @@ gulp.task('bundle', ['ts'], function() {
                 'bower_components/angular/angular.js',
                 'bower_components/angular-strap/dist/angular-strap.js',
                 'bower_components/angular-strap/dist/angular-strap.tpl.js',
-                'bower_components/angular-messages/angular-messages.js',
                 'bower_components/angular-resource/angular-resource.js',
                 'bower_components/angular-route/angular-route.js',
                 'src/client/app/output.js'
