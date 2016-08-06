@@ -6,6 +6,6 @@
     "sourceMap": true,
     "removeComments": false,
     "noImplicitAny": true,
-    "out": "../src/client/app/output.js"
+    "out": "output.js"
   }
 }
