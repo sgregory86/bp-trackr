@@ -26,7 +26,7 @@ gulp.task('tslint', function() {
 
 gulp.task('ts', ['tslint'], function() {
     var sourceTsFiles = [
-        'typings/tsd.d.ts',
+        'typings/index.d.ts',
         'src/client/app/app.module.ts',
         'src/client/app/app.route.ts',
         'src/client/app/core/core.module.ts',
