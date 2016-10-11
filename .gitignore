@@ -2,9 +2,13 @@
 bower_components
 node_modules
 
-# TypeScript, Browserify
+# TypeScript & Browserify
+typings
 src/client/app/output.js
 src/client/app/bundle.js
 
 # CSS
 src/client/styles/master.min.css
+
+# Editor
+.vscode
