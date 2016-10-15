@@ -9,13 +9,15 @@ A blood pressure web application using AngularJS, TypeScript, Node, Express, Mon
 
 1. Install [MongoDB](https://www.mongodb.org)
 
-1. Install these npm packages `npm i -g bower gulp`
+1. Install these npm packages `npm i -g bower gulp typings`
 
 ## Getting Started
 
 1. Clone this repo
 
 1. Run `npm i`
+
+1. Run `typings install`
 
 1. Run `bower install`
 
