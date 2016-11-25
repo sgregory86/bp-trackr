@@ -2,7 +2,7 @@ namespace app.core {
     'use strict';
 
     let dateFormat = 'M/dd/yy';
-    let readingLimit = -5;
+    let readingLimit = -10;
     let timeFormat = 'h:mm a';
 
     let config = {

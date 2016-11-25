@@ -4,11 +4,22 @@
   </div>
 </div>
 <div class="container">
-  <div ng-repeat="reading in vm.readings | limitTo: vm.readingLimit | orderBy: '-_id'" ng-class="{'latest': $first}" class="alert alert-success" role="alert">
-    <strong class="blood-pressure">
-      <span class="systolic">{{reading.systolic}}</span>/<span class="diastolic">{{reading.diastolic}}</span>
-    </strong>
-    <time>{{reading.date}} {{reading.time}}</time>
-    <span ng-click="vm.removeItem(reading)" class="glyphicon glyphicon-remove delete"></span>
-  </div>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Reading</th>
+        <th>Date</th>
+        <th>Time</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="reading in vm.readings | limitTo: vm.readingLimit | orderBy: '-_id'" ng-class="{'latest': $first}">
+        <th scope="row"><span class="systolic">{{reading.systolic}}</span>/<span class="diastolic">{{reading.diastolic}}</span></th>
+        <td>{{reading.date}}</td>
+        <td>{{reading.time}}</td>
+        <td><span ng-click="vm.removeItem(reading)" class="glyphicon glyphicon-remove-circle delete"></span></td>
+      </tr>
+    </tbody>
+  </table>
 </div>
