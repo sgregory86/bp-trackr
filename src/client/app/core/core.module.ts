@@ -1,10 +1,10 @@
 namespace app.core {
-    'use strict';
+  'use strict';
 
-    angular
-        .module('app.core', [
-            'ngResource',
-            'ngRoute',
-            'mgcrea.ngStrap'
+  angular
+    .module('app.core', [
+      'ngResource',
+      'ngRoute',
+      'mgcrea.ngStrap'
     ]);
 }

@@ -1,20 +1,20 @@
 namespace app.core {
-    'use strict';
+  'use strict';
 
-    export class TimeService {
-        static $inject = ['$filter'];
-        constructor(private $filter: ng.IFilterService) {}
+  export class TimeService {
+    static $inject = ['$filter'];
+    constructor(private $filter: ng.IFilterService) {}
 
-        currentDateTime(format: string): string {
-            return this.$filter('date')(new Date(), format);
-        }
-
-        setDateTime(selectedDateTime: Date, format: string): string {
-            return selectedDateTime ? this.$filter('date')(selectedDateTime, format) : this.currentDateTime(format);
-        }
+    currentDateTime(format: string): string {
+      return this.$filter('date')(new Date(), format);
     }
 
-    angular
-        .module('app.core')
-        .service('timeservice', TimeService);
+    setDateTime(selectedDateTime: Date, format: string): string {
+      return selectedDateTime ? this.$filter('date')(selectedDateTime, format) : this.currentDateTime(format);
+    }
+  }
+
+  angular
+    .module('app.core')
+    .service('timeservice', TimeService);
 }

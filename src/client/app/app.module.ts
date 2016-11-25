@@ -1,10 +1,10 @@
 namespace app {
-    'use strict';
+  'use strict';
 
-    angular
-        .module('app', [
-            'app.core',
-            'app.dashboard',
-            'app.reading'
-        ]);
+  angular
+    .module('app', [
+      'app.core',
+      'app.dashboard',
+      'app.reading'
+    ]);
 }

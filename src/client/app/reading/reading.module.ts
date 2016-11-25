@@ -1,5 +1,5 @@
 namespace app.reading {
-    'use strict';
+  'use strict';
 
-    angular.module('app.reading', []);
+  angular.module('app.reading', []);
 }

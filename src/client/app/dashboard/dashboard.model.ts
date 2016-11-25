@@ -1,9 +1,9 @@
 namespace app.dashboard {
-    'use strict';
+  'use strict';
 
-    export interface IDashboard {
-        readingLimit: number;
-        readings: Object;
-        removeItem: (reading: ng.resource.IResource<Object>) => void;
-    }
+  export interface IDashboard {
+    readingLimit: number;
+    readings: Object;
+    removeItem: (reading: ng.resource.IResource<Object>) => void;
+  }
 }
