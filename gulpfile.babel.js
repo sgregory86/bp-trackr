@@ -1,30 +1,33 @@
 'use strict';
 
-var gulp = require('gulp'),
-  args = require('yargs').argv,
-  browserify = require('browserify'),
-  plug = require('gulp-load-plugins')(),
-  source = require('vinyl-source-stream'),
-  ts = require('gulp-typescript'),
-  tslint = require('gulp-tslint'),
-  tsProject = ts.createProject('tsconfig.json');
+import gulp from 'gulp';
+import sass from 'gulp-sass';
+import uglify from 'gulp-uglify';
+import bump from 'gulp-bump';
+import browserify from 'browserify';
+import source from 'vinyl-source-stream';
+import ts from 'gulp-typescript';
+import tslint from 'gulp-tslint';
+import yargs from 'yargs';
 
-gulp.task('sass', function() {
+const args = yargs.argv;
+const tsProject = ts.createProject('tsconfig.json');
+
+gulp.task('sass', () => {
   return gulp.src('src/client/styles/master.scss')
-    .pipe(plug.plumber())
-    .pipe(plug.sass())
-    .pipe(plug.csso())
-    .pipe(plug.rename('master.min.css'))
+    .pipe(sass({
+      outputStyle: 'compressed'
+    }))
     .pipe(gulp.dest('src/client/styles'));
 });
 
-gulp.task('tslint', function() {
+gulp.task('tslint', () => {
   return gulp.src(['src/client/app/**/*.ts'])
     .pipe(tslint())
     .pipe(tslint.report('verbose'));
 });
 
-gulp.task('ts', ['tslint'], function() {
+gulp.task('ts', ['tslint'], () => {
   var sourceTsFiles = [
     'typings/index.d.ts',
     'src/client/app/app.module.ts',
@@ -47,7 +50,7 @@ gulp.task('ts', ['tslint'], function() {
   return tsResult.js.pipe(gulp.dest('src/client/app'));
 });
 
-gulp.task('bundle', ['ts'], function() {
+gulp.task('bundle', ['ts'], () => {
   browserify({
       entries: [
         'bower_components/angular/angular.js',
@@ -63,15 +66,15 @@ gulp.task('bundle', ['ts'], function() {
     .pipe(gulp.dest('src/client/app'));
 });
 
-gulp.task('bump', function() {
+gulp.task('bump', () => {
   return gulp.src(['./bower.json', './package.json'])
-    .pipe(plug.bump({
+    .pipe(bump({
       version: args.version
     }))
     .pipe(gulp.dest('./'));
 });
 
-gulp.task('watch', function() {
+gulp.task('watch', () => {
   gulp.watch('src/client/styles/*.scss', ['sass']);
   gulp.watch('src/client/app/**/*.ts', ['tslint']);
 });
