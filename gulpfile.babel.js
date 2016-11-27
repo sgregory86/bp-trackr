@@ -53,11 +53,11 @@ gulp.task('ts', ['tslint'], () => {
 gulp.task('bundle', ['ts'], () => {
   browserify({
       entries: [
-        'bower_components/angular/angular.js',
-        'bower_components/angular-strap/dist/angular-strap.js',
-        'bower_components/angular-strap/dist/angular-strap.tpl.js',
-        'bower_components/angular-resource/angular-resource.js',
-        'bower_components/angular-route/angular-route.js',
+        'node_modules/angular/angular.js',
+        'node_modules/angular-strap/dist/angular-strap.js',
+        'node_modules/angular-strap/dist/angular-strap.tpl.js',
+        'node_modules/angular-resource/angular-resource.js',
+        'node_modules/angular-route/angular-route.js',
         'src/client/app/output.js'
       ]
     })

@@ -9,7 +9,7 @@ A Blood Pressure application built on Angular 1.5 components, TypeScript, Expres
 
 1. Install [MongoDB](https://www.mongodb.org)
 
-1. Install these npm packages `npm i -g bower gulp typings`
+1. Install these npm packages `npm i -g gulp typings`
 
 ## Getting Started
 
@@ -18,8 +18,6 @@ A Blood Pressure application built on Angular 1.5 components, TypeScript, Expres
 1. Run `npm i`
 
 1. Run `typings install`
-
-1. Run `bower install`
 
 1. Build the project `gulp build`
 
