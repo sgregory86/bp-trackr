@@ -1,0 +1,24 @@
+tsFiles:
+  - typings/index.d.ts
+  - src/client/app/app.module.ts
+  - src/client/app/app.route.ts
+  - src/client/app/core/core.module.ts
+  - src/client/app/core/config.ts
+  - src/client/app/core/data.service.ts
+  - src/client/app/core/time.service.ts
+  - src/client/app/dashboard/dashboard.module.ts
+  - src/client/app/dashboard/dashboard.component.ts
+  - src/client/app/dashboard/dashboard.interface.ts
+  - src/client/app/dashboard/dashboard.controller.ts
+  - src/client/app/reading/reading.module.ts
+  - src/client/app/reading/reading.component.ts
+  - src/client/app/reading/reading.interface.ts
+  - src/client/app/reading/reading.controller.ts
+
+bundleFiles:
+  - node_modules/angular/angular.js
+  - node_modules/angular-strap/dist/angular-strap.js
+  - node_modules/angular-strap/dist/angular-strap.tpl.js
+  - node_modules/angular-resource/angular-resource.js
+  - node_modules/angular-route/angular-route.js
+  - src/client/app/output.js
