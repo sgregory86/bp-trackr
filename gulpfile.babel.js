@@ -2,21 +2,18 @@
 
 import gulp from 'gulp';
 import sass from 'gulp-sass';
-import uglify from 'gulp-uglify';
 import ts from 'gulp-typescript';
 import tslint from 'gulp-tslint';
 import browserify from 'browserify';
+import source from 'vinyl-source-stream';
 import fs from 'file-system';
 import yaml from 'js-yaml';
-import source from 'vinyl-source-stream';
-import yargs from 'yargs';
 
-const args = yargs.argv;
 const config = yaml.safeLoad(fs.readFileSync('gulpfile.config.yml', 'utf8'));
 const tsProject = ts.createProject('tsconfig.json');
 
 gulp.task('sass', () => {
-  return gulp.src('src/client/styles/master.scss')
+  return gulp.src('src/client/styles/style.scss')
     .pipe(sass({
       outputStyle: 'compressed'
     }))

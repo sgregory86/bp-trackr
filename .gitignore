@@ -7,7 +7,7 @@ src/client/app/output.js
 src/client/app/bundle.js
 
 # CSS
-src/client/styles/master.css
+src/client/styles/style.css
 
 # Editor
 .vscode
