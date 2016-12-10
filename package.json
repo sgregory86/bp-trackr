@@ -12,19 +12,19 @@
     "url": "git+https://github.com/stevengregory/bp-trackr.git"
   },
   "dependencies": {
-    "angular": "^1.5.9",
-    "angular-resource": "^1.5.9",
-    "angular-route": "^1.5.9",
+    "angular": "^1.6.0",
+    "angular-resource": "^1.6.0",
+    "angular-route": "^1.6.0",
     "angular-strap": "^2.3.10",
     "body-parser": "^1.15.2",
     "bootstrap-sass": "^3.3.7",
     "express": "^4.14.0",
-    "mongoose": "^4.5.8",
+    "mongoose": "^4.7.2",
     "morgan": "^1.7.0",
     "path": "^0.12.7"
   },
   "devDependencies": {
-    "babel-core": "^6.18.2",
+    "babel-core": "^6.20.0",
     "babel-preset-es2015": "^6.18.0",
     "browserify": "^13.1.0",
     "file-system": "^2.2.2",
