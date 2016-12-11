@@ -4,7 +4,7 @@ namespace app.core {
   angular
     .module('app.core', [
       'ngResource',
-      'ngRoute',
+      'ui.router',
       'mgcrea.ngStrap'
     ]);
 }

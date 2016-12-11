@@ -1,18 +1,21 @@
 namespace app {
   'use strict';
 
-  function routeConfig($locationProvider: ng.ILocationProvider, $routeProvider: ng.route.IRouteProvider) {
+  function routeConfig($locationProvider: ng.ILocationProvider, $stateProvider: ng.ui.IStateProvider, $urlRouterProvider: ng.ui.IUrlRouterProvider) {
     $locationProvider.html5Mode(true);
-    $routeProvider.when('/', {
-      template: '<dashboard></dashboard>'
-    }).when('/add', {
-      template: '<reading></reading>'
-    }).otherwise({
-      redirectTo: '/'
-    });
+    $stateProvider
+      .state('dashboard', {
+        url: '/',
+        component: 'dashboard'
+      })
+      .state('add', {
+        url: '/add',
+        component: 'reading'
+      });
+    $urlRouterProvider.otherwise('/');
   }
 
-  routeConfig.$inject = ['$locationProvider', '$routeProvider'];
+  routeConfig.$inject = ['$locationProvider', '$stateProvider', '$urlRouterProvider'];
 
   angular
     .module('app')
