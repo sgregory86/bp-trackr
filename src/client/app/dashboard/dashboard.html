@@ -1,8 +1,3 @@
-<div class="jumbotron">
-  <div class="container">
-    <h1>Blood Pressure</h1>
-  </div>
-</div>
 <div class="container">
   <table class="table table-striped">
     <thead>
@@ -14,7 +9,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr ng-repeat="reading in vm.readings | limitTo: vm.readingLimit | orderBy: '-_id'" ng-class="{'latest': $first}">
+      <tr ng-repeat="reading in vm.readings | limitTo: vm.readingLimit | orderBy: '-_id'" ng-class="{'latest': $first, 'last': $last}">
         <th scope="row"><span class="systolic">{{reading.systolic}}</span>/<span class="diastolic">{{reading.diastolic}}</span></th>
         <td>{{reading.date}}</td>
         <td>{{reading.time}}</td>
