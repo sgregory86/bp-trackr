@@ -15,12 +15,16 @@ A Blood Pressure application built on Angular 1.6, TypeScript, Express and Mongo
 
 1. Get in `cd bpt`
 
+## Installing & Building
+
 1. Run `npm i`
 
 1. Run `typings install`
 
-1. Build the project `gulp build`
+1. Run `gulp build`
 
-1. Start the server `npm start`
+## Running the Application
+
+1. Run `npm start`
 
 1. Go to [http://localhost:3001](http://localhost:3001)
