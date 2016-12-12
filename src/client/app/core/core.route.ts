@@ -1,4 +1,4 @@
-namespace app {
+namespace app.core {
   'use strict';
 
   function routeConfig($locationProvider: ng.ILocationProvider, $stateProvider: ng.ui.IStateProvider, $urlRouterProvider: ng.ui.IUrlRouterProvider) {
@@ -18,6 +18,6 @@ namespace app {
   routeConfig.$inject = ['$locationProvider', '$stateProvider', '$urlRouterProvider'];
 
   angular
-    .module('app')
+    .module('app.core')
     .config(routeConfig);
 }
