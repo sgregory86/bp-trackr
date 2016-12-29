@@ -22,13 +22,15 @@ gulp.task('sass', () => {
 
 gulp.task('tslint', () => {
   return gulp.src(['src/client/app/**/*.ts'])
-    .pipe(tslint())
-    .pipe(tslint.report('verbose'));
+    .pipe(tslint({
+      formatter: 'verbose'
+    }))
+    .pipe(tslint.report())
 });
 
 gulp.task('ts', ['tslint'], () => {
   let tsResult = gulp.src(config.tsFiles)
-    .pipe(ts(tsProject));
+    .pipe(tsProject());
   return tsResult.js.pipe(gulp.dest('src/client/app'));
 });
 
