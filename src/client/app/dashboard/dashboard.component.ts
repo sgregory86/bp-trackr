@@ -1,7 +1,7 @@
 namespace app.dashboard {
   'use strict';
 
-  let dashboard = {
+  const dashboard = {
     templateUrl: 'app/dashboard/dashboard.html',
     controllerAs: 'vm',
     controller: 'DashboardController'

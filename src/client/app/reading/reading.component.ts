@@ -1,7 +1,7 @@
 namespace app.reading {
   'use strict';
 
-  let reading = {
+  const reading = {
     templateUrl: 'app/reading/reading.html',
     controllerAs: 'vm',
     controller: 'ReadingController'
