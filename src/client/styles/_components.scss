@@ -11,7 +11,8 @@
   tbody button {
     padding: 6px;
   }
-  &.datepicker-mode-1, &.datepicker-mode-2 {
+  &.datepicker-mode-1,
+  &.datepicker-mode-2 {
     tbody button {
       height: 65px;
     }
