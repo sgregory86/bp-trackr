@@ -1,6 +1,6 @@
-var mongoose = require('mongoose');
+const mongoose = require('mongoose');
 
-var BloodPressureSchema = new mongoose.Schema({
+const BloodPressureSchema = new mongoose.Schema({
   date: String,
   time: String,
   systolic: Number,

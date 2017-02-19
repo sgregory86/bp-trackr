@@ -1,7 +1,7 @@
-var app = require('../app');
+const app = require('../app');
 
 app.set('port', process.env.PORT || 3001);
 
-app.listen(app.get('port'), function() {
+app.listen(app.get('port'), () => {
   console.log('Express server listening on port ' + app.get('port'));
 });

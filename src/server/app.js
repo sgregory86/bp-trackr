@@ -1,13 +1,13 @@
-var path = require('path'),
-  express = require('express'),
-  bodyParser = require('body-parser'),
-  logger = require('morgan'),
-  mongoose = require('mongoose'),
-  routes = require('./routes/index');
+const path = require('path');
+const express = require('express');
+const bodyParser = require('body-parser');
+const logger = require('morgan');
+const mongoose = require('mongoose');
+const routes = require('./routes/index');
 
 mongoose.connect('mongodb://localhost:27017/bp');
 
-var app = express();
+const app = express();
 
 app.use(logger('dev'));
 app.use(bodyParser.urlencoded({
@@ -18,7 +18,7 @@ app.use(express.static(path.join(__dirname, '../client')));
 
 app.use('/', routes);
 
-app.use(function(err, req, res, next) {
+app.use((err, req, res, next) => {
   console.error(err.stack);
   res.send(500, {
     message: err.message
