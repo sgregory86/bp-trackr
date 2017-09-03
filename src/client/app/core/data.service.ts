@@ -19,7 +19,7 @@ namespace app.core {
       return reading.save(item);
     }
 
-    deleteReading(reading: ng.resource.IResource<Object>, readings: any): ng.IPromise<ng.resource.IResourceService> {
+    deleteReading(reading: ng.resource.IResource<Object>, readings: any): ng.IPromise<Object> {
       readings.splice(readings.indexOf(reading), 1);
       return reading.$delete(reading);
     }

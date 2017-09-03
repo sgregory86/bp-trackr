@@ -1,5 +1,4 @@
 tsFiles:
-  - typings/index.d.ts
   - src/client/app/app.module.ts
   - src/client/app/core/core.module.ts
   - src/client/app/core/core.route.ts
