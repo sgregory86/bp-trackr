@@ -11,3 +11,7 @@ src/client/styles/style.css
 
 # Editor
 .vscode
+
+# System Files
+.DS_Store
+Thumbs.db

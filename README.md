@@ -1,7 +1,6 @@
-BPTrackr
-====================
+# BPTrackr
 
-A Blood Pressure application built on Angular 1.6, TypeScript, Express and MongoDB.
+A blood pressure application built on AngularJS, TypeScript, Express and MongoDB.
 
 ## Prerequisites
 
